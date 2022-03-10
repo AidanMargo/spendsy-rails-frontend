@@ -26,7 +26,7 @@ const clearState = () => {
 
   const handleData = (dataValue) => {
     const { bill_name, bill_amount, category_name, wallet_id} = dataValue;
-    fetch(`/bills`, {
+    fetch(`${process.env.REACT_APP_API_URL}/bills`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

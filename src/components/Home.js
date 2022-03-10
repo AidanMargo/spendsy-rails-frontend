@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 function Home({currentUser}){
-console.log(currentUser)
   
   
   return (

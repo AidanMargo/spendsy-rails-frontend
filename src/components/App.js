@@ -19,7 +19,7 @@ function App() {
 
 
   useEffect(()=> {
-    fetch("/me")
+    fetch(`${process.env.REACT_APP_API_URL}/me`)
     .then((r) => r.json())
         .then((user) => {
           setCurrentUser(user)       
@@ -27,7 +27,7 @@ function App() {
   }, [])
 
   const logout = () => {
-    fetch('/logout', {
+    fetch(`${process.env.REACT_APP_API_URL}/logout`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'

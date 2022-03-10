@@ -17,7 +17,7 @@ function WalletPage({currentUser}){
     e.preventDefault()
 
     const {walletName, walletAmount} = info
-    fetch(`/wallets`, {
+    fetch(`${process.env.REACT_APP_API_URL}/wallets`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
