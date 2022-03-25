@@ -25,7 +25,7 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
 
   e.preventDefault(); 
-  fetch(`https://spendsy-backend.herokuapp.com/login`, {
+  fetch(`https://spendsy-api.herokuapp.com/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
         setCurrentUser(user) 
         console.log(setCurrentUser)
       }) 
-      fetch(`https://spendsy-backend.herokuapp.com/me`)
+      fetch(`https://spendsy-api.herokuapp.com/me`)
       .then((r) => r.json())
           .then((user) => {
             setCurrentUser(user)       

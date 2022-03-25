@@ -30,7 +30,7 @@ function SignUp({setCurrentUser, currentUser}) {
     e.preventDefault(); 
     const userCreds = { ...formData };
 
-    fetch(`https://spendsy-backend.herokuapp.com/signup`, {
+    fetch(`https://spendsy-api.herokuapp.com/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function SignUp({setCurrentUser, currentUser}) {
           console.log(currentUser)
         }) 
         
-        fetch(`https://spendsy-backend.herokuapp.com/me`)
+        fetch(`https://spendsy-api.herokuapp.com/me`)
       .then((r) => r.json())
           .then((user) => {
             setCurrentUser(user)       

@@ -19,7 +19,7 @@ function App() {
 
 
   useEffect(()=> {
-    fetch(`https://spendsy-backend.herokuapp.com/me`)
+    fetch(`https://spendsy-api.herokuapp.com/me`)
     .then((r) => r.json())
         .then((user) => {
           setCurrentUser(user)       
@@ -27,7 +27,7 @@ function App() {
   }, [])
 
   const logout = () => {
-    fetch(`https://spendsy-backend.herokuapp.com/logout`, {
+    fetch(`https://spendsy-api.herokuapp.com/logout`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
