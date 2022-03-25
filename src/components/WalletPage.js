@@ -17,7 +17,7 @@ function WalletPage({currentUser}){
     e.preventDefault()
 
     const {walletName, walletAmount} = info
-    fetch(`${process.env.REACT_APP_API_URL}/wallets`, {
+    fetch(`https://spendsy-backend.herokuapp.com/wallets`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

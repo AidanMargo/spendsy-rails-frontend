@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 function Wallet({currentUser, currentWallet, currentUser:{bills}}) {
   
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/userwallet/${currentWallet.id}`)
+    fetch(`https://spendsy-backend.herokuapp.com/userwallet/${currentWallet.id}`)
     .then(resp => resp.json())
     .then(data => setWalletBills(data.bills))
 
-    fetch(`${process.env.REACT_APP_API_URL}/total/${currentWallet.id}`)
+    fetch(`https://spendsy-backend.herokuapp.com/total/${currentWallet.id}`)
     .then(resp => resp.json())
     .then(total => setTotal(total))
   }, [])
@@ -68,7 +68,7 @@ const updateWalletInfo = (id) => {
     name: walletInfo.name,
     amount: walletInfo.funds
   }
-  fetch (`${process.env.REACT_APP_API_URL}/wallets/${id}`, {
+  fetch (`https://spendsy-backend.herokuapp.com/wallets/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -93,14 +93,14 @@ const updateWalletInfo = (id) => {
 
 // Get all the bills for the wallet (after deleting or editing a bill)
   const getBills = (currentWallet) => {
-    fetch(`${process.env.REACT_APP_API_URL}/userwallet/${currentWallet}`)
+    fetch(`https://spendsy-backend.herokuapp.com/userwallet/${currentWallet}`)
     .then(resp => resp.json())
     .then(data => setWalletBills(data.bills))
   }
 
 // Get Total from all bill amounts
   const getTotal = () =>{
-    fetch(`${process.env.REACT_APP_API_URL}/total/${currentWallet.id}`)
+    fetch(`https://spendsy-backend.herokuapp.com/total/${currentWallet.id}`)
     .then(resp => resp.json())
     .then(totalValue => setTotal(totalValue))
   }
@@ -118,7 +118,7 @@ const updateWalletInfo = (id) => {
 //  Delete a bill
   function handleBillDelete(id, currentWallet){
      if(window.confirm("Are you sure you want to delete this bill?")){
-        fetch(`${process.env.REACT_APP_API_URL}/bills/${id}`,{
+        fetch(`https://spendsy-backend.herokuapp.com/bills/${id}`,{
          method: "DELETE",  
         })
         .then(() => {
@@ -131,7 +131,7 @@ const updateWalletInfo = (id) => {
 
 // EDIT ROW/PATCH FUNCTIONS
 const updateRow = ({id, bill_name, bill_amount, category_name}, currentWallet) => {
-  fetch(`${process.env.REACT_APP_API_URL}/bills/${id}`, {
+  fetch(`https://spendsy-backend.herokuapp.com/bills/${id}`, {
       method: "PATCH",
       headers: {
           "Content-type": "application/json"
@@ -157,7 +157,7 @@ const updateRow = ({id, bill_name, bill_amount, category_name}, currentWallet) =
  //  Delete a Wallet 
  function handleWalletDelete(id, currentWallet){
   if(window.confirm("Are you sure you want to delete this Wallet?")){
-     fetch(`${process.env.REACT_APP_API_URL}/wallets/${id}`,{
+     fetch(`https://spendsy-backend.herokuapp.com/wallets/${id}`,{
       method: "DELETE",  
      })
      .then(() => {

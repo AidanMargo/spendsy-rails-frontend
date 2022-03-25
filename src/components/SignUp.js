@@ -30,7 +30,7 @@ function SignUp({setCurrentUser, currentUser}) {
     e.preventDefault(); 
     const userCreds = { ...formData };
 
-    fetch(`${process.env.REACT_APP_API_URL}/signup`, {
+    fetch(`https://spendsy-backend.herokuapp.com/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function SignUp({setCurrentUser, currentUser}) {
           console.log(currentUser)
         }) 
         
-        fetch(`${process.env.REACT_APP_API_URL}/me`)
+        fetch(`https://spendsy-backend.herokuapp.com/me`)
       .then((r) => r.json())
           .then((user) => {
             setCurrentUser(user)       

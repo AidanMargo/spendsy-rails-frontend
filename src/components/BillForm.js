@@ -26,7 +26,7 @@ const clearState = () => {
 
   const handleData = (dataValue) => {
     const { bill_name, bill_amount, category_name, wallet_id} = dataValue;
-    fetch(`${process.env.REACT_APP_API_URL}/bills`, {
+    fetch(`https://spendsy-backend.herokuapp.com/bills`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
