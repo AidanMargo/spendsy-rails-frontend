@@ -1,7 +1,7 @@
 import Wallet from "./Wallet"
 import {useState} from 'react'
 
-// Possibly add handleadbills function. will do a post fetch 
+
 function WalletPage({currentUser}){
 
   const [makeWallet, setMakeWallet] = useState(false)
