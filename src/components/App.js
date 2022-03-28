@@ -54,7 +54,6 @@ function App() {
           <Route path="/wallet/new" element={<CreateWallet />} />
           <Route path="/form" element={<BillForm currentUser={currentUser}/>} />
           <Route path="/signup" element={<SignUp setCurrentUser={setCurrentUser} currentUser={currentUser}/>} />
-
         </Routes>
       </div>
     </BrowserRouter>
