@@ -40,8 +40,6 @@ function App() {
 
   return (
     <BrowserRouter>
-
-    
       <div className="App">
         <NavBar currentUser={currentUser} logout={logout}/>
         <Routes>
