@@ -22,7 +22,8 @@ function App() {
     fetch(`https://spendsy-api.herokuapp.com/me`)
     .then((r) => r.json())
         .then((user) => {
-          setCurrentUser(user)       
+          setCurrentUser(user) 
+          console.log(user)      
         })
   }, [])
 
